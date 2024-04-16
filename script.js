@@ -1,18 +1,19 @@
-function load(url) {
-  // display loading image here...
-  document.getElementById('images/loading.gif').visible = true;
-  // request your data...
-  var req = new XMLHttpRequest();
-  req.open("POST", url, true);
+function onReady(callback) {
+  var intervalID = window.setInterval(checkReady, 1000);
 
-  req.onreadystatechange = function () {
-      if (req.readyState == 4 && req.status == 200) {
-          // content is loaded...hide the gif and display the content...
-          if (req.responseText) {
-              document.getElementById('content').innerHTML = req.responseText;
-              document.getElementById('images/loading.gif').visible = false;
-          }
+  function checkReady() {
+      if (document.getElementsByTagName('body')[0] !== undefined) {
+          window.clearInterval(intervalID);
+          callback.call(this);
       }
-  };
-  request.send(vars);
+  }
 }
+
+function show(id, value) {
+  document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+  show('main', true);
+  show('loading', false);
+});
