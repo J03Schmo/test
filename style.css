@@ -7,6 +7,7 @@
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    font-family:'Courier New', Courier, monospace
 }
 
 .page {
@@ -19,7 +20,7 @@
     margin: 0;
     padding: 0;
     width: 80px;
-    background-color: #4e4e4e;
+    background-color: #242424;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -31,9 +32,7 @@
 /* Sidebar links */
 .sidebar a {
     display: block;
-    color: black;
     padding: 16px;
-    text-decoration: none;
 }
 
 /* Links on mouse-over */
@@ -64,16 +63,16 @@ div.content {
     }
     .sidebar a {
         display: block;
-        color: black;
         padding: 16px;
-        text-decoration: none;
     }
 }
 
 #home {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     background-image: url("images/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -102,4 +101,15 @@ div.content {
 
 h1 {
     font-size:50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 20px 0 20px;
+    flex-basis: 100%;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    flex-basis: 100%;
 }
