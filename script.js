@@ -1,19 +1,17 @@
-function onReady(callback) {
-  var intervalID = window.setInterval(checkReady, 1000);
+const wait = (delay = 0) =>
+  new Promise(resolve => setTimeout(resolve, delay));
 
-  function checkReady() {
-      if (document.getElementsByTagName('body')[0] !== undefined) {
-          window.clearInterval(intervalID);
-          callback.call(this);
-      }
-  }
-}
+const setVisible = (elementOrSelector, visible) => 
+  (typeof elementOrSelector === 'string'
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector
+  ).style.display = visible ? 'block' : 'none';
 
-function show(id, value) {
-  document.getElementById(id).style.display = value ? 'block' : 'none';
-}
+setVisible('.page', false);
+setVisible('#loading', true);
 
-onReady(function () {
-  show('main', true);
-  show('loading', false);
-});
+document.addEventListener('DOMContentLoaded', () =>
+  wait(1000).then(() => {
+    setVisible('.page', true);
+    setVisible('#loading', false);
+  }));
