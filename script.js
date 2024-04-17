@@ -7,11 +7,11 @@ const setVisible = (elementOrSelector, visible) =>
     : elementOrSelector
   ).style.display = visible ? 'block' : 'none';
 
-setVisible('.page', false);
+setVisible('.main', false);
 setVisible('#loading', true);
 
 document.addEventListener('DOMContentLoaded', () =>
   wait(1000).then(() => {
-    setVisible('.page', true);
+    setVisible('.main', true);
     setVisible('#loading', false);
   }));
