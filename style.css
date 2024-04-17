@@ -12,7 +12,7 @@
 
 .page {
     width: 100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0 10px 0;
 }
 
 .footer {
@@ -89,6 +89,9 @@ div.content {
 
 #topic1 {
     background-image: url("images/overview_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #topic2 {
@@ -108,20 +111,25 @@ div.content {
 }
 
 .container {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5px;
-    padding: 0 10px 0 10px;
+    padding: 0 20px 20px 20px;
 }
 
-.text {
-    font-size: 20px;
+@media screen and (min-width: 700px){
+    .container {
+        display: flex;
+        max-height: 50vh;
+        max-width: 100%;
+    }
 }
 
-.image {
-    max-width: 100%;
-    max-height: 100%;
+@media screen and (min-width: 1920px){
+    .container {
+        padding: 0 300px 20px 300px;
+    }
+}
+
+.text, .image {
+    flex: 0.5;
 }
 
 h1 {
@@ -136,5 +144,11 @@ h1 {
 h2 {
     font-size: 35px;
     font-weight: bold;
+    padding: 10px 0 20px 20px;
 }
 
+img {
+    max-width:100%;
+    display: block;
+    align-self: center;
+  }
