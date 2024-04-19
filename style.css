@@ -56,7 +56,6 @@
     color: #fff;
   }
 
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
     margin-left: 80px;
     padding: 0;
@@ -164,7 +163,6 @@ div.content {
 .text {
     flex: 45%;
     padding: 0 10px 0 0;
-    /*border: solid;*/
 }
 
 .image {
@@ -172,7 +170,6 @@ div.content {
     flex-direction: column;
     align-items: center;
     flex: 45%;
-    /*border: solid;*/
 }
 
 img {
@@ -183,7 +180,6 @@ img {
 
 .gap {
     flex: 10%;
-    /*border: solid;*/
 }
 
 .button {
